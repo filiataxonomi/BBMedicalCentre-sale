@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boyup Brook Medical Centre — Special Council Meeting 10 June 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Avenir Next', 'Avenir', system-ui, -apple-system, sans-serif;
+      background: #fff;
+      color: #111;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* HEADER */
+    header {
+      padding: 2.5rem 0 1.8rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .kicker {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.9rem;
+    }
+
+    header p {
+      font-size: 0.88rem;
+      color: #555;
+      max-width: 740px;
+      margin-bottom: 0.4rem;
+    }
+
+    header a { color: #333; }
+
+    /* AGENDA */
+    .section-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #aaa;
+      padding: 1.8rem 0 0.6rem;
+    }
+
+    .agenda-link {
+      font-size: 0.88rem;
+      margin-bottom: 0.8rem;
+      color: #555;
+    }
+
+    .agenda-link a { color: #111; font-weight: 600; }
+
+    iframe.agenda {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #e0e0e0;
+      display: block;
+    }
+
+    /* TWO COLUMNS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0 3rem;
+      border-top: 1px solid #ddd;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .doc h2 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #aaa;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .doc h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 1.4rem 0 0.5rem;
+      line-height: 1.3;
+    }
+
+    .doc h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    .doc p {
+      font-size: 0.88rem;
+      color: #333;
+      margin-bottom: 0.7rem;
+    }
+
+    .doc ul, .doc ol {
+      margin: 0.4rem 0 0.8rem 1.4rem;
+    }
+
+    .doc li {
+      font-size: 0.88rem;
+      color: #333;
+      margin-bottom: 0.3rem;
+    }
+
+    .doc .title-block {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .doc .title-block h3 {
+      font-size: 1.05rem;
+      margin: 0 0 0.2rem;
+    }
+
+    .doc .title-block p {
+      font-size: 0.8rem;
+      color: #999;
+      margin: 0;
+    }
+
+    .doc hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 1.2rem 0;
+    }
+
+    .dl-link {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #666;
+      border: 1px solid #ccc;
+      padding: 0.25rem 0.7rem;
+      border-radius: 3px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+
+    .dl-link:hover { background: #f5f5f5; }
+
+    /* SOURCES */
+    .sources {
+      border-top: 1px solid #ddd;
+      padding: 2rem 0 3rem;
+    }
+
+    .sources h2 {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #aaa;
+      margin-bottom: 1.2rem;
+    }
+
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .src-card {
+      padding: 0.9rem 1rem;
+      border: 1px solid #eee;
+    }
+
+    .src-date {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #bbb;
+      margin-bottom: 0.2rem;
+    }
+
+    .src-card strong {
+      display: block;
+      font-size: 0.82rem;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .src-card p {
+      font-size: 0.75rem;
+      color: #666;
+      margin-bottom: 0.35rem;
+      line-height: 1.4;
+    }
+
+    .src-card a {
+      font-size: 0.73rem;
+      color: #444;
+    }
+
+    footer {
+      border-top: 1px solid #eee;
+      padding: 1.2rem 0;
+      font-size: 0.72rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="kicker">Shire of Boyup Brook — Special Council Meeting — 10 June 2026 — 8:00am</div>
+    <h1>Item 5.1.2 Consider the &#8216;sale&#8217; of the Medical Centre</h1>
+    <p>The Shire of Boyup Brook will hold a Special Council Meeting at 8am on 10 June 2026.</p>
+    <p>The formal submission and public questions below will be submitted by a Boyup Brook resident prior to the meeting.</p>
+    <p>The Council agenda is published below as a public record.</p>
+  </header>
+
+  <!-- SUBMISSION + QUESTIONS -->
+  <div class="two-col">
+
+    <!-- SUBMISSION -->
+    <div class="doc">
+      <h2>Formal Submission</h2>
+
+      <div class="title-block">
+        <h3>Submission Regarding Item 5.1.2<br>Consider the 'sale' of the Medical Centre</h3>
+        <p>Special Council Meeting — 8am 10 June 2026</p>
+        <a class="dl-link" href="submission.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <p>I respectfully submit that Council should not support the recommendation in its current form because the information presented is insufficient to justify an in-principle decision regarding the future ownership and operation of the Boyup Brook Medical Centre.</p>
+
+      <hr>
+
+      <h4>1. Insufficient Financial Information</h4>
+      <p>The principal justification advanced in the report appears to be that the Medical Centre costs ratepayers approximately $150,000 per annum.</p>
+      <p>However, the financial information presented does not enable Councillors or the community to properly assess that claim.</p>
+      <p>Council's own budget and financial reporting demonstrate that the Medical Centre generates substantial annual revenue through surgery turnover and associated income streams. The financial reports also include administrative allocations, depreciation and other accounting treatments which may not represent direct cash expenditure.</p>
+      <p>Without a detailed reconciliation of the reported figure, it is not possible to determine:</p>
+      <ul>
+        <li>the actual annual cash subsidy provided by ratepayers;</li>
+        <li>the extent to which depreciation contributes to the reported result;</li>
+        <li>the extent to which internal overhead allocations contribute to the reported result;</li>
+        <li>whether the underlying medical practice is operating at a deficit; and</li>
+        <li>whether disposal would provide any meaningful long-term financial benefit to the community.</li>
+      </ul>
+      <p>If financial performance is the primary justification for pursuing a sale or transfer, Council should first be provided with a detailed and transparent financial analysis. A decision of this significance should not be based upon a headline figure that cannot be independently assessed from the information supplied.</p>
+
+      <hr>
+
+      <h4>2. Failure to Demonstrate Consistency with the Strategic Community Plan</h4>
+      <p>The Shire's Strategic Community Plan 2021–2031 identifies retention of health and medical services as an important community priority. The community vision adopted within the Plan expressly recognises the importance of retaining health and medical services and supporting an ageing population.</p>
+      <p>The Medical Centre is therefore not simply a business operation. It is directly connected to the achievement of strategic objectives adopted by Council following community consultation.</p>
+      <p>Despite this, the report does not appear to contain any assessment of:</p>
+      <ul>
+        <li>how the proposal aligns with the Strategic Community Plan;</li>
+        <li>how retention of medical services will be protected;</li>
+        <li>how community expectations identified through strategic planning will continue to be met; or</li>
+        <li>what risks may arise if future service delivery outcomes differ following transfer of ownership.</li>
+      </ul>
+      <p>Before supporting any proposal involving a strategic community asset, Council should be provided with evidence demonstrating how the proposal supports its own adopted strategic objectives.</p>
+
+      <hr>
+
+      <h4>3. Lack of a Clearly Documented Decision-Making Pathway</h4>
+      <p>A review of publicly available Council records does not appear to identify any prior Council resolution directing investigation of a sale, transfer or privatisation of the Medical Centre.</p>
+      <p>Public records indicate that:</p>
+      <ul>
+        <li>the Medical Services Committee remained active during 2025, with Council appointing a replacement committee member in May 2025;</li>
+        <li>Council subsequently dissolved the Medical Services Committee in October 2025 on the basis that governance efficiencies had been achieved through direct reporting to Council via the Chief Executive Officer; and</li>
+        <li>the current proposal has subsequently emerged without any publicly identified strategic review, business case, options analysis or community consultation process.</li>
+      </ul>
+      <p>The report does not identify:</p>
+      <ul>
+        <li>when consideration of disposal or transfer first commenced;</li>
+        <li>what factors triggered that consideration;</li>
+        <li>whether alternative models were assessed;</li>
+        <li>what expert advice informed the recommendation; or</li>
+        <li>why disposal is considered preferable to other available options.</li>
+      </ul>
+      <p>For a proposal involving a significant community asset, a more transparent decision-making pathway would assist both Councillors and the community to understand how the recommendation was developed.</p>
+
+      <hr>
+
+      <h4>4. Lack of Community Consultation</h4>
+      <p>The Strategic Community Plan identifies retention of medical services as a community priority. Given the significance of the Medical Centre to local healthcare access, community wellbeing and support for an ageing population, it is surprising that no community consultation appears to have been undertaken prior to the development of the recommendation.</p>
+      <p>Before making an in-principle decision, Council should consider whether the community should first be provided with an opportunity to understand the proposal and express its views.</p>
+
+      <hr>
+
+      <h4>Conclusion</h4>
+      <p>This submission does not argue that the Medical Centre must remain in Shire ownership indefinitely.</p>
+      <p>Rather, it submits that Council has not yet been provided with sufficient information to determine whether the proposed course of action is in the best interests of the Boyup Brook community.</p>
+      <p>The financial case has not been adequately demonstrated, the proposal has not been assessed against the Strategic Community Plan, the decision-making pathway is unclear, and community consultation does not appear to have occurred.</p>
+      <p>Accordingly, Council should defer the recommendation and request a comprehensive business case, strategic assessment and community consultation process before considering any in-principle support for the proposal.</p>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="doc">
+      <h2>Public Questions</h2>
+
+      <div class="title-block">
+        <h3>Public Question Time<br>Item 5.1.2 Consider the 'sale' of the Medical Centre</h3>
+        <p>Special Council Meeting — 8am 10 June 2026</p>
+        <a class="dl-link" href="questions.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <ol>
+        <li>
+          <p>Item 5.1.2 is titled "Consider the 'sale' of the Medical Centre". What precisely is proposed to be sold, transferred, leased or otherwise disposed of under this proposal? Why does the CEO's report place the word 'sale' in quotation marks?</p>
+        </li>
+        <li>
+          <p>Why has no detailed financial analysis, business case or supporting financial data been provided as an attachment to Item 5.1.2?</p>
+        </li>
+        <li>
+          <p>What is the Medical Centre's annual operating result excluding depreciation and internal overhead allocations?</p>
+        </li>
+        <li>
+          <p>What resolution, briefing, report, or direction first authorised or directed the administration to investigate or develop this proposal?</p>
+        </li>
+        <li>
+          <p>Has the proposal been formally assessed against the Strategic Community Plan 2021–2031 objective of retaining health and medical services within the community?</p>
+        </li>
+        <li>
+          <p>What consultation has been undertaken with the community regarding this proposal?</p>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+
+  <!-- AGENDA -->
+  <div class="section-label">Council Agenda — 10 June 2026</div>
+  <p class="agenda-link">
+    Published by the Shire of Boyup Brook, 5 June 2026.
+    Official source: <a href="https://www.boyupbrook.wa.gov.au/documents/1487/special-council-agenda-10-june-2026" target="_blank">boyupbrook.wa.gov.au ↗</a>
+  </p>
+  <iframe class="agenda" src="agenda.pdf" title="Special Council Meeting Agenda 10 June 2026"></iframe>
+
+  <!-- SOURCE DOCUMENTS -->
+  <div class="sources">
+    <h2>Source Documents</h2>
+    <div class="sources-grid">
+
+      <div class="src-card">
+        <div class="src-date">5 June 2026</div>
+        <strong>Special Council Meeting Agenda — 10 June 2026</strong>
+        <p>Item 5.1.2. Authored by CEO Leonard Long. No financial attachments provided.</p>
+        <a href="https://www.boyupbrook.wa.gov.au/documents/1487/special-council-agenda-10-june-2026" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">28 May 2026</div>
+        <strong>Council Minutes — 28 May 2026</strong>
+        <p>Monthly Medical Services activity report tabled. Medical Centre running surplus YTD.</p>
+        <a href="https://www.boyupbrook.wa.gov.au/documents/1485/council-minutes-28-may-2026-(unconfirmed)" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">30 October 2025</div>
+        <strong>Council Minutes — 30 October 2025</strong>
+        <p>CM 25/10/200: Medical Services Committee formally dissolved. Reason: "governance efficiencies achieved through direct reporting to Council via the CEO."</p>
+        <a href="https://www.boyupbrook.wa.gov.au/documents/1436/council-minutes-30-october-2025" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">27 November 2025</div>
+        <strong>Council Minutes — 27 November 2025</strong>
+        <p>CM 25/11/222: Bulk Billing Practice Incentive Program registration confirmed. Practice transitioned to full bulk billing 11 November 2025.</p>
+        <a href="https://www.boyupbrook.wa.gov.au/documents/1443/council-minutes-27-november-2025" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">27 February 2025</div>
+        <strong>Council Minutes — 27 February 2025</strong>
+        <p>Medical Services Committee included in Delegations of Authority Register 2025.</p>
+        <a href="https://www.boyupbrook.wa.gov.au/documents/1360/council-minutes-27-february-2025" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">2024–25</div>
+        <strong>Annual Report 2024–25</strong>
+        <p>Page 20: MSC listed in Delegations of Authority Register.</p>
+        <a href="https://www.boyupbrook.wa.gov.au/Profiles/boyupbrook/Assets/ClientData/06_1_1A_Annual_Report_and_Annual_Financial_Report_for_2024_2025.pdf" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">2 February 2024</div>
+        <strong>Medical Services Committee — Minutes</strong>
+        <p>Inaugural and only meeting of the MSC. Presiding member signature blank — minutes unconfirmed.</p>
+        <a href="https://www.boyupbrook.wa.gov.au/Profiles/boyupbrook/Assets/ClientData/2024_02_02_Medical_Services_Committee_Minutes.pdf" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">Adopted 29 Feb 2024</div>
+        <strong>MSC Terms of Reference</strong>
+        <p>Section 2: covers "Potential Business opportunities." Section 4: monthly meetings required. Adopted by Council Decision 24/02/022.</p>
+        <a href="https://www.boyupbrook.wa.gov.au/Profiles/boyupbrook/Assets/ClientData/6_1A_Terms_of_reference_Medical_Services_Committee.pdf" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">2021–2031</div>
+        <strong>Strategic Community Plan 2021–2031</strong>
+        <p>Identifies retention of health and medical services as a community priority.</p>
+        <a href="https://www.boyupbrook.wa.gov.au" target="_blank">boyupbrook.wa.gov.au ↗</a>
+      </div>
+
+      <div class="src-card">
+        <div class="src-date">Current</div>
+        <strong>Local Government Act 1995 (WA)</strong>
+        <p>s.3.58 Disposal of property. s.5.8 Committees. s.5.12 Presiding members. s.5.41 CEO responsibilities.</p>
+        <a href="https://www.legislation.wa.gov.au/legislation/statutes.nsf/main_mrtitle_551_homepage.html" target="_blank">legislation.wa.gov.au ↗</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    All claims sourced from Shire of Boyup Brook public records and WA State legislation.
+  </footer>
+
+</div>
+</body>
+</html>
